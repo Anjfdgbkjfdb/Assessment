@@ -9,20 +9,20 @@ b1 = Button (root, text="Quit", command=quit)
 b1.pack() 
 
 def enter():
-    leader=e1.get() 
-    string="Name = " + leader
+    Name=e1.get() 
+    string="Name = " + Name
     l1["text"]=string
 
-    plan=e2.get()
-    string="Receipt number = " + plan
+    Receipt=e2.get()
+    string="Receipt number = " + Receipt
     l2["text"]=string
 
-    campers=e3.get()
-    string="Item hired = " + campers
+    Item=e3.get()
+    string="Item hired = " + Item
     l3["text"]=string
 
-    weather=e4.get()
-    string="Quantity = " + weather
+    Qua=e4.get()
+    string="Quantity = " + Qua
     l4["text"]=string
 
 b1 = Button (root, text="Enter", command=enter)
