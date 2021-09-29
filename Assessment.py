@@ -11,15 +11,18 @@ def quit():
 
 def save():
     global receipt_detail,Name,Receipt,Item,Qua,total_entry
-
     receipt_detail.append([Name.get(),Receipt.get(),Item.get(),Qua.get()]) 
     total_entry +=  1
-
+    Name.delete(0,"end")
+    Receipt.delete(0,"end")
+    Item.delete(0,"end")
+    Qua.delete(0,"end")
+   
 def print():
-    global total_entry, row_num, rown
+    global total_entry, row_num
     row_num = 0
     while row_num < total_entry:
-        rown=Label(root, text=row_num).grid(column=1,row=row_num+10) 
+        Label(root, text=row_num).grid(column=1,row=row_num+10)
         Label(root, text=(receipt_detail[row_num][0])).grid(column=2,row=row_num+10)
         Label(root, text=(receipt_detail[row_num][1])).grid(column=3,row=row_num+10)
         Label(root, text=(receipt_detail[row_num][2])).grid(column=4,row=row_num+10)
@@ -27,14 +30,15 @@ def print():
         row_num +=  1
 
 def remove():
-    global receipt_detail, delete, total_entry, row_num, rown
+    global receipt_detail, delete, total_entry, row_num
     del receipt_detail[int(delete.get())]
     total_entry = total_entry - 1
-    Label(root,text="               ").grid(column=1,row=row_num+9) 
-    Label(root,text="               ").grid(column=2,row=row_num+9) 
-    Label(root,text="               ").grid(column=3,row=row_num+9) 
-    Label(root,text="               ").grid(column=4,row=row_num+9) 
-    Label(root,text="               ").grid(column=5,row=row_num+9)     
+    Label(root,text="                 ").grid(column=1,row=row_num+9) 
+    Label(root,text="                 ").grid(column=2,row=row_num+9) 
+    Label(root,text="                 ").grid(column=3,row=row_num+9) 
+    Label(root,text="                 ").grid(column=4,row=row_num+9) 
+    Label(root,text="                 ").grid(column=5,row=row_num+9)  
+    delete.delete(0,"end")
     print()
 
 #below is the code for the buttons of the program and how they are positioned
